@@ -1,0 +1,432 @@
+html {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    min-height: 100%;
+    min-width: 700px;
+    background-color: #16161a;
+}
+
+a {
+    color: #7f5af0
+}
+
+form i {
+    margin-left: 290px;
+    display:block;
+    cursor: pointer;
+}
+
+.login__box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 500px;
+    min-height: 500px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: #fffffe;
+    opacity: 0.88;
+}
+
+.login__header {
+    color: #16161a;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.login__elements {
+    color: #16161a;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.notes__box {
+    margin: auto;
+    width: 800px;
+    padding-bottom: 100px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: #fffffe;
+    opacity: 0.88;
+}
+
+.notes__header {
+    color: #16161a;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.notes__elements {
+    color: #16161a;
+    text-align: center;
+    padding-top: 20px;
+}
+
+input[type=text], select {
+    width: 80%;
+    padding: 10px;
+    margin: -29px auto;
+    display:block;
+    text-align: left;
+    color: #16161a;
+    border: 2px solid #7f5af0e8;
+    border-radius: 4px;
+    box-sizing: border-box;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type=text]:focus {
+    border: 2px solid #7f5af0;
+}
+
+input[type=email], select {
+    width: 80%;
+    padding: 10px;
+    margin: -29px auto;
+    display:block;
+    text-align: left;
+    color: #16161a;
+    border: 2px solid #7f5af0e8;
+    border-radius: 4px;
+    box-sizing: border-box;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type=email]:focus {
+    border: 2px solid #7f5af0;
+}
+
+input[type=password], select {
+    width: 80%;
+    padding: 10px;
+    margin:-29px auto;
+    display:block;
+    text-align: left;
+    color: #16161a;
+    border: 2px solid #7f5af0e8;
+    border-radius: 4px;
+    box-sizing: border-box;
+    -webkit-text-security: disc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type=password]:focus {
+    border: 2px solid #7f5af0;
+}
+
+input[type=submit] {
+    width: 35%;
+    background-color: #7f5af0e8;
+    color: #fffffe;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+}
+  
+input[type=submit]:hover {
+    background-color: #7f5af0;
+}
+
+#save {
+    width: 5%;
+    background-color: #7f5af0e8;
+    color: #fffffe;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: -95px 650px 100px 700px;
+    display: block;
+}
+
+#create {
+    width: 5%;
+    background-color: #7f5af0e8;
+    color: #fffffe;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: -95px 650px 30px 700px;
+    display: block;
+}
+  
+#save:hover {
+    background-color: #7f5af0;
+}
+
+#create:hover {
+    background-color: #7f5af0;
+}
+
+.login__signup {
+    width: 100%;
+    text-align: center;
+    color: #16161a;
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 30px;
+    margin: 0 auto;
+    display: block;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 6.5%;
+    min-height: 6.5%;
+    background-color: #24242b;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.footer-content__top {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fffffe;
+    padding-top: 10px;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.footer-content__bottom {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fffffe;
+    padding-top: 10px;
+    margin: 0 auto;
+    display: block;
+}
+
+.footer-content__time {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    transition: ease-in-out 0.1s;
+    color: #fffffe;
+    padding-top: 10px;
+    margin: 0 auto;
+    display: block;
+}
+
+.forgot__pwd {
+    width: 90%;
+    text-align: right;
+    font-size: 14px;
+    color: #7f5af0;
+    position: absolute;
+    top: 210px;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+}
+
+.notification-danger {
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 330px;
+    height: 30px;
+    min-height: 30px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: #fa5246;
+    color: #fffffe;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    line-height: 30px;
+    padding: 10px 10px;
+    text-rendering: optimizelegibility;
+    text-size-adjust: 100%;
+    opacity: 0.88;
+    -webkit-font-smoothing: antialiased;
+    z-index: 100;
+}
+
+.notification-success {
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 330px;
+    height: 30px;
+    min-height: 30px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: #2cb67d;
+    color: #fffffe;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    line-height: 30px;
+    padding: 10px 10px;
+    text-rendering: optimizelegibility;
+    text-size-adjust: 100%;
+    opacity: 0.88;
+    -webkit-font-smoothing: antialiased;
+    z-index: 100;
+}
+  
+/* The actual popup */
+.footer-content__top .popuptext {
+    visibility: hidden;
+    width: 350px;
+    background-color: #7f5af0;
+    color: #fffffe;
+    text-align: center;
+    border-radius: 6px;
+    padding: 14px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 110%;
+    left: 50%;
+    margin-left: -182px;
+}
+  
+/* Popup arrow */
+.footer-content__top .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #7f5af0 transparent transparent transparent;
+}
+  
+/* Toggle this class - hide and show the popup */
+.footer-content__top .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+  
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+  
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+h2 {
+    display: inline;
+    font-weight: bold;
+    font-size: 16px;
+}
+  
+p {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16p;
+}
+  
+ul,li {
+    list-style: none;
+    padding-left: 0px;
+}
+  
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+  
+ul li a {
+    text-decoration: none;
+    color: #16161a;
+    background: #feff9c;
+    display: block;
+    height: 10em;
+    width: 10em;
+    padding: 1em;
+    box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+    transform: rotate(-6deg);
+    transition: transform .15s linear;
+}
+  
+ul li:nth-child(even) a {
+    transform: rotate(4deg);
+    position: relative;
+    top: 5px;
+    background: #feff9c;
+}
+
+ul li:nth-child(3n) a {
+    transform: rotate(-3deg);
+    position: relative;
+    top: -5px;
+    background: #feff9c;
+}
+  
+ul li:nth-child(6n) a {
+    transform: rotate(5deg);
+    position: relative;
+    top: -10px;
+}
+  
+ul li a:hover,ul li a:focus {
+    box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+    transform: scale(1.25);
+    position: relative;
+    z-index: 5;
+}
+  
+ul li {
+    margin: 1em;
+}

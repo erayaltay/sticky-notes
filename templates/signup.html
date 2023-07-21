@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/css/styles.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="/static/js/functions.js"></script>
+        <title>Sign up</title>
+    </head>
+    <body class="signup">
+        {% with messages = get_flashed_messages() %}
+            {% if messages and messages[0] == "You signed up!" %}
+                <div class="notification-success">
+                    {{ messages[0] }} Go to the <a href="/login" style="color: #16161a !important; font-weight: bold !important;">login page</a>
+                </div>
+            {% elif messages and messages[0] == "You already have an account." %}
+                <div class="notification-danger">
+                    {{ messages[0] }} Go to the <a href="/login" style="color: #16161a !important; font-weight: bold !important;">login page</a>
+                </div>
+            {% endif %}
+        {% endwith %}
+        <div class="login__box">
+            <p class="login__header">Sign up 📝</p>
+            <form class="form" method="POST">
+                <input type="text" id="name" name="name" placeholder=" 👥 Name" required><i class="bi bi-person-badge-fill" style="opacity: 0"></i><br><br><br><br>
+                <input type="email" id="email" name="email" placeholder=" 📧 Email" required><i class="bi bi-envelope-fill" style="opacity: 0"></i><br><br><br><br>
+                <input type="password" id="password" name="password" placeholder=" 🔑 Password" required><i class="bi bi-eye-slash" id="togglePassword"></i><br><br><br>
+                <input type="submit" value="Sign up">
+            </form>
+            <p class="login__signup">Already have an account? <a href="/login">Log in</a></p>
+        </div>
+
+        <script>
+            var togglePassword = document.querySelector("#togglePassword");
+            var password = document.querySelector("#password");
+    
+            togglePassword.addEventListener("click", function () {
+                // toggle the type attribute
+                var type = password.getAttribute("type") === "password" ? "text" : "password";
+                password.setAttribute("type", type);
+                
+                // toggle the icon
+                this.classList.toggle("bi-eye");
+            });
+        </script>
+
+        <div class="footer">
+            <div class="footer-content__top" onclick="showAbout()">About
+                <span class="popuptext" id="about">This is a test project. Developed & designed for fun and test purposes.</span>
+            </div>
+            <div class="footer-content__bottom" id="worldClock"></div>
+        </div>
+        <script>
+            // get current time
+            const displayTime = document.querySelector("#worldClock");
+            function showTime() {
+                let time = new Date();
+                displayTime.innerText = time.toLocaleTimeString("en-US", { hour12: false });
+                setTimeout(showTime, 1000);
+            }
+            showTime();
+        </script>
+    </body>
+</html>
