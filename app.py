@@ -92,15 +92,24 @@ def create_app():
             user_password = request.form.get("password")
             hashed_user_password = hash(user_password)
 
+            print(user_email)
+            print(hashed_user_email)
+            print(user_password)
+            print(hashed_user_password)
+
             # loop through the users
-            for user in app.db.users.find({}):
-                if user["email"] == hashed_user_email and user["password"] == hashed_user_password:
-                    # redirect to notes page
-                    return redirect(url_for("notes"))
-                else:
-                    # show error message
-                    flash("Invalid email or password!")
-                    return redirect(url_for("login"))
+            if app.db.users.count_documents({}) > 0:
+                for user in app.db.users.find({}):
+                    if user["email"] == hashed_user_email and user["password"] == hashed_user_password:
+                        # redirect to notes page
+                        return redirect(url_for("notes"))
+                    else:
+                        # show error message
+                        flash("Invalid email or password!")
+                        return redirect(url_for("login"))
+            else:
+                flash("Invalid email or password!")
+                return redirect(url_for("login"))
     
     @app.route("/signup/")
     def signup():
@@ -118,21 +127,31 @@ def create_app():
             new_user_password = request.form.get("password")
 
             # loop through the users
-            for user in app.db.users.find({}):
-                if user["email"] == hashed_user_email:
-                    # show that the account already exists to the user
-                    flash("You already have an account.")
-                    return redirect(url_for("signup"))
-                else:
-                    # save the user's credentials to MongoDB
-                    app.db.users.insert_one({
-                        "name": new_user_name,
-                        "email": hash(new_user_email),
-                        "password": hash(new_user_password)
-                    })
-                    # show success message to the user
-                    flash("You signed up!")
-                    return redirect(url_for("signup"))
+            if app.db.users.count_documents({}) > 0:
+                for user in app.db.users.find({}):
+                    if user["email"] == hashed_user_email:
+                        # show that the account already exists to the user
+                        flash("You already have an account.")
+                        return redirect(url_for("signup"))
+                    else:
+                        # save the user's credentials to MongoDB
+                        app.db.users.insert_one({
+                            "name": new_user_name,
+                            "email": hash(new_user_email),
+                            "password": hash(new_user_password)
+                        })
+                        # show success message to the user
+                        flash("You signed up!")
+                        return redirect(url_for("signup"))
+            else:
+                app.db.users.insert_one({
+                    "name": new_user_name,
+                    "email": hash(new_user_email),
+                    "password": hash(new_user_password)
+                })
+                # show success message to the user
+                flash("You signed up!")
+                return redirect(url_for("signup"))
         return render_template("signup.html")
-    
+
     return app
