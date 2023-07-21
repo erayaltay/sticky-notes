@@ -92,11 +92,6 @@ def create_app():
             user_password = request.form.get("password")
             hashed_user_password = hash(user_password)
 
-            print(user_email)
-            print(hashed_user_email)
-            print(user_password)
-            print(hashed_user_password)
-
             # loop through the users
             if app.db.users.count_documents({}) > 0:
                 for user in app.db.users.find({}):
